@@ -1,0 +1,16 @@
+# cloud-config
+package_upgrade: true
+packages:
+  - nginx
+runcmd:
+  - systemctl enable nginx
+  - systemctl start nginx
+users:
+  - default
+  - name: azureuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    lock_passwd: true
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDmvfnpYmM7+8qffubS89Ke2AcyqWvS7NDRmOGDaeBF/6KhVPZXxqGSToXOpEr3It0w+GUTra+FPEHDtNwo5tXhbsngIyT18E3xVF/Y4Qd8syyTvPyiOJz/AJoYm83v1LULFLtA9UmMPJuXdluqQFc5FF1aRNcvneDP2TxQfQ1R2qcIr2hDAOUN4FjJp9LKMWuRVTMP11oie4tYoLWI/qfkppUPoou9RE3+/LPdso7mpcmkrRSJGhTqRkGLkHpweEqDK1kzI1dPoWTaGrxy/xjGumWxhri2pVDpC9xXf9mWA7LRA730M18A2MEwbjj1OReVlaAcamOujTLxXBJtA1z7pPOb2/aK18no4IHks4xlONJuM0H+UyjGap05YEGGglCzl5ThJtter99SL4V0Q7d10iNNL/AfaBQ2y5b8sNM3JdjwKtkw8TC4BTEMkhEJwFFjngNJVvzzmLqQX2ytSn3CQ/Pqu8thDjTCW7rfrjDiBwG6/nhcsHdzJrmCS/Mp7pc= t0t0r@debian
