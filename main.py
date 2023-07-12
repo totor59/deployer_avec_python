@@ -1,3 +1,8 @@
+#####################################################
+### Written by t0t0r <victormarechal59@gmail.com> ###
+### Last revision: 12/7/2023                      ###
+#####################################################
+
 # Import the needed credential and management objects from the libraries.
 import base64
 
